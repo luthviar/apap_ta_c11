@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head-html"></head>
+<body>
+<header th:replace="fragments/fragment :: header"></header>
+
+<!--Jumbotron Section-->
+<section id="header">
+    <div class="container">
+        <h1>Menu Aplikasi Akademik</h1>
+        <a href="#">Dashboard</a>
+    </div>
+</section>
+<!--Jumbotron Section-->
+<section id="main-content">
+    <div class="container col-md-9 offset-md-3">
+        <div class="row">
+            <h1>UPDATE <br/> KELULUSAN</h1>
+        </div>
+        <div class="row">
+            <form th:action="@{/admin/updateStatusMhs}" method="post">
+                <div th:object="${updateStatusSpec}">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Username</label>
+                                    <div class="col-sm-10">
+                                        <input placeholder="Username" id="username" name="username"
+                                               th:field="*{username}" th:value="*{username}" class="form-control" th:required="required" th:readonly="true"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">NPM</label>
+                                    <div class="col-sm-10">
+                                        <input placeholder="NPM" name="npm" th:field="*{npm}" th:value="*{npm}" class="form-control"
+                                               th:required="required" th:readonly="true"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-6">
+
+                        	<div class="form-group row">
+							    <label class="col-sm-4 col-form-label">Wisuda</label>
+							    <div class="col-sm-8">
+		                            <select class="custom-select" th:field="*{isWisuda}">
+                                    <option th:value="true">Sudah Wisuda</option>
+                                    <option th:value="false">Belum Wisuda</option>
+                                </select>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+							    <label class="col-sm-4 col-form-label">Aktif</label>
+							    <div class="col-sm-8">
+		                        <select class="custom-select" th:field="*{isAktif}">
+                                    <option th:value="true">Aktif</option>
+                                    <option th:value="false">Tidak Aktif</option>
+                                </select>
+								</div>
+							</div>
+                         
+                            <div class="form-group">
+                                <input type="submit" name="submit" value="Update" style="cursor:pointer;" class="btn btn-primary"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+        <br/>
+
+
+    </div>
+
+</section>
+
+<div th:replace="fragments/fragment :: foot-html"></div>
+</body>
+</html>

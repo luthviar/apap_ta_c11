@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head-html"></head>
+<body>
+<header th:replace="fragments/fragment :: header">
+    
+</header>
+
+<!--Jumbotron Section-->
+<section id="header">
+    <div class="container">
+        <h1>Kelola Mahasiswa</h1>
+        <a href="#">Dashboard / Kelola Mahasiswa</a>
+    </div>
+</section>
+<section id="main-content">
+    <div class="">
+       
+        <div class="col"></div>
+        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>No. </th>
+                <th>NPM</th>
+                <th>Username</th>
+                <th>Nama Lengkap</th>
+                <th>Jenjang</th>
+                <th>Tahun Masuk</th>
+                <th>Kurikulum</th>
+                <th>Universitas</th>
+                <th>Fakultas</th>
+                <th>Prodi</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--  <tr th:each="irs,iterationStatus: ${listMhsLulus}">
+                <th th:text="${iterationStatus.count}">
+                    No. 1
+                </th>
+                <th th:text="${irs.kodeMK}" name="npm">
+                    Kode MK
+                </th>
+                <th th:text="'Nama Mata Kuliah'">
+                    Nama Mata Kuliah
+                </th>
+                <th th:text="${irs.statusIrs}">
+                    Status IRS
+                </th>
+                <th th:text="${irs.tanggalPengisian}">
+                    tanggal Pengisian
+                </th>
+                <th th:text="${irs.term}">
+                    Term
+                </th>
+            </tr> -->
+            
+            	<tr th:each="mahasiswa,iterationStatus: ${mhs}">
+            	<td th:text="${iterationStatus.count}">
+                    1
+                </td>
+                <td th:text="${mahasiswa.npm}">
+                
+                    1406557535
+                </td>
+                
+                <td th:text="${mahasiswa.username}">
+                    luthfi.abdurrahim
+                </td>
+                <td th:text="${mahasiswa.namaLengkap}">
+                    Luthfi Abdurrahim
+                </td>
+                <td th:text="${mahasiswa.jenjang}">
+                   S1
+                </td>
+                <td th:text="${mahasiswa.tahunMasuk}">
+                    2014
+                </td>
+                 <td th:text="${mahasiswa.kodeKurikulum}">
+                    2017/2018
+                </td>
+                
+                 <td th:text="${mahasiswa.idUniv}">
+                    Universitas Indonesia
+                </td>
+                
+                 <td th:text="${mahasiswa.idFakultas}">
+                    Fakultas Ilmu Komputer
+                </td>
+                
+                 <td th:text="${mahasiswa.idProdi}">
+                    Sistem Informasi
+                </td>
+                
+                <td>
+                   <div class="form-group">
+                   		<a th:href="'/admin/edit-mahasiswa/'+ ${mahasiswa.id}" class="btn btn-info">Edit</a>
+                   		<!-- harusnya /admin/edit-mahasiswa/{idMhs} -->
+                    </div>
+                </td>
+                
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<div th:replace="fragments/fragment :: foot-html"></div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="../js/app.js"></script>
+</body>
+</html>
+

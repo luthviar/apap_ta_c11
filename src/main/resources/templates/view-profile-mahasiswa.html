@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head-html"></head>
+<body>
+   <header th:replace="fragments/fragment :: header"></header>
+	
+	<!--Jumbotron Section-->
+	<section id="header">
+		<div class="container">
+			<h1>Menu Aplikasi Akademik</h1>
+			<a href="#">Dashboard / Profile Mahasiswa</a>
+		</div>
+	</section>
+    <!--Jumbotron Section-->
+    <section id="main-content">
+		<div class="container col-md-9 offset-md-3">
+			<div class="row">
+				<h1>PROFILE <br/> MAHASISWA</h1>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<table  class="table">
+						<tr>
+							<th>Username: </th>
+							<td th:text="${mhs.username}">
+								username
+							</td>
+						</tr>
+
+						<tr>
+							<th>Nama Lengkap: </th>
+							<td th:text="${mhs.namaLengkap}">
+								nama lengkap
+							</td>
+						</tr>
+
+						<tr>
+							<th>Jenjang: </th>
+							<td th:text="${mhs.jenjang}">
+								jenjang
+							</td>
+						</tr>
+
+						<tr>
+							<th>Tahun Masuk: </th>
+							<td th:text="${mhs.tahunMasuk}">
+								tahun masuk
+							</td>
+						</tr>
+
+						<tr>
+							<th>Kode Kurikulum: </th>
+							<td th:text="${mhs.kodeKurikulum}">
+								kode kurikulum
+							</td>
+						</tr>
+
+						<tr>
+							<th>Universitas: </th>
+							<td th:text="${univ.nama_univ}"></td>
+						</tr>
+
+						<tr>
+							<th>Fakultas: </th>
+							<td th:text="${fakultas.nama_fakultas}">
+							</td>
+						</tr>
+
+						<tr>
+							<th>Prodi: </th>
+							<td th:text="${prodi.nama_prodi}">
+							</td>
+						</tr>
+
+						
+
+					</table>
+				</div>
+			</div>
+			<br/>
+
+			
+
+		</div>
+
+	</section>
+	
+<div th:replace="fragments/fragment :: foot-html"></div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head-html"></head>
+<body>
+<header th:replace="fragments/fragment :: header"> </header>
+
+<!--Jumbotron Section-->
+<section id="header">
+    <div class="container">
+        <h1>Lihat Riwayat Mahasiswa</h1>
+        <a href="#">Dashboard / Riwayat Mahasiswa / Detail Nilai</a>
+    </div>
+</section>
+<section id="main-content" >
+    <div class="container">
+    
+    <div class="row">
+        	<div class="col-md-6 offset-md-3">
+        	
+        		<h5 th:text="${'Nama Mahasiswa : ' + mahasiswa.namaLengkap}">Luthfi Abdurrahim</h5>
+        		<h5 th:text="${'Term : '+riwayat.idTerm}">Term : </h5>
+        		<br/>
+        		
+        	</div>
+        </div>
+    
+        <div class="col-md-10 offset-md-1">
+              <table  class="table" >
+                  <thead>
+                  	<th>No. </th>
+                  	<th>Kode MK</th>
+	              	<th>Nama MK</th>
+	              	
+					<th>SKS</th>
+					<th>Nilai Angka</th>
+					<th>Nilai Huruf</th>
+					<th>Lulus</th>
+                  </thead>
+                  
+                  <tbody>
+	                  
+	                  <tr th:each="nilai,iterationStatus: ${allNilai}">
+	                    <td th:text="${iterationStatus.count}">
+	                      1
+	                   </td>
+	                   <td th:text="${nilai.kodeMk}">
+	                       CSF1600200
+	                   </td>
+	                  <td th:text="${listMatkul['__${nilai.kodeMk}__'].getNama_matkul()}">  
+	                       Dasar-Dasar Pemrograman
+	                   </td>
+	                   
+	                   <td th:text="${listMatkul['__${nilai.kodeMk}__'].getJumlah_sks()}">
+	                  
+	                       6
+	                   </td>
+	                   <td th:text="${nilai.nilaiAngka}">
+	                       88.8
+	                   </td>
+	                   <td th:text="${nilai.nilaiHuruf}">
+	                       A
+	                   </td>
+		                   <td th:if="${nilai.isLulus == '1'}">
+		                       Lulus
+		                   </td>
+		                   <td th:if="${nilai.isLulus == '0'}">
+		                       Tidak Lulus
+		                   </td>
+		                   
+	                   </tr>
+	                   
+	              	</tbody>
+	              	
+	          	</table>
+          	
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="../js/app.js"></script>
+</body>
+</html>
+

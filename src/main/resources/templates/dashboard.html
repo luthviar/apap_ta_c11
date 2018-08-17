@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head-html"></head>
+<body>
+	<header th:replace="fragments/fragment :: header"></header>
+
+	<!--Jumbotron Section-->
+	<section id="header">
+		<div class="container">
+			<h1>Menu Aplikasi Akademik</h1>
+			<a href="#">Dashboard </a>
+		</div>
+	</section>
+	<section id="main-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-3">
+					<a href="/irs/add" style="text-decoration:none;color:#fff">
+					<div class="card" style="background:#58bfbb;padding:50px 0px 50px 0px">
+						<h5 class="text-center">Add Irs</h5>
+					</div></a>
+				</div>
+				<div class="col-3">
+					<a href="/term" style="text-decoration:none;color:#fff">
+					<div class="card" style="background:#58bfbb;padding:50px 0px 50px 0px">
+						<h5 class="text-center">Lihat Irs</h5>
+					</div>
+					</a>
+				</div>
+				<div class="col-3">
+					<a href="/kelas" style="text-decoration:none;color:#fff">
+					<div class="card" style="background:#58bfbb;padding:50px 0px 50px 0px">
+						<h5 class="text-center">Liat Riwayat</h5>
+					</div>
+					</a>
+				</div>
+				<div class="col-3">
+					<a href="/kelas" style="text-decoration:none;color:#fff">
+					<div class="card" style="background:#58bfbb;padding:50px 0px 50px 0px">
+						<h5 class="text-center">Lihat Profil</h5>
+					</div>
+					</a>
+				</div>		
+			</div>
+			<br/>
+
+			<div class="row">
+				<div class="col-3">	</div>
+				<div class="col-3">
+					<!--<a href="/assignKurikulum" style="text-decoration:none;color:#fff">-->
+					<!--<div class="card" style="background:#58bfbb;padding:50px 0px 50px 0px">-->
+						<!--<h5 class="text-center">Atur Kurikulum</h5>-->
+					<!--</div>-->
+					<!--</a>-->
+				</div>
+				<div class="col-3">
+					<!--<a href="/assignKurikulum" style="text-decoration:none;color:#fff">-->
+					<!--<div class="card" style="background:#58bfbb;padding:50px 0px 50px 0px">-->
+						<!--<h5 class="text-center">Lihat Kurikulum</h5>-->
+					<!--</div>-->
+					<!--</a>-->
+				</div>
+				<div class="col-3"></div>
+
+			</div>
+
+		</div>
+
+	</section>
+<div th:replace="fragments/fragment :: foot-html"></div>
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>-->
+<!--<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
+</body>
+</html>

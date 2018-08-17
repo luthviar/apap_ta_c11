@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head-html"></head>
+<body>
+   <header th:replace="fragments/fragment :: header"></header>
+	
+	<!--Jumbotron Section-->
+	<section id="header">
+		<div class="container">
+			<h1>Menu Aplikasi Akademik</h1>
+			<a href="#">Dashboard / Edit Mahasiswa</a>
+		</div>
+	</section>
+    <!--Jumbotron Section-->
+    <section id="main-content">
+		<div class="container col-md-9 offset-md-3">
+			<div class="row">
+				<h1>EDIT  <br/> MAHASISWA</h1>
+			</div>
+			<div class="row">
+                
+                 <form  th:action = "@{'/admin/edit-mahasiswa/submit'}" method = "post" >
+                        <div th:object="${updateMhsSpec}">
+                        <div class="row" >
+                        	<div class="col-12">
+                            
+                            <div class="form-group">
+                            	 <div class="form-group row">
+								    <label  class="col-sm-2 col-form-label">Username</label>
+								    <div class="col-sm-10">
+								      <input placeholder="Username" id="username" name="username" th:field="*{username}" class="form-control"  th:required="required" readonly="readonly"/>
+								    </div>
+								  </div>    
+                            </div>
+                            
+                            <div class="form-group">
+                            	 <div class="form-group row">
+								    <label  class="col-sm-2 col-form-label">NPM</label>
+								    <div class="col-sm-10">
+										    <input placeholder="NPM" id="npm" name="npm" th:field="*{npm}" class="form-control" th:required="required" readonly="readonly"/>
+								    </div>
+								  </div>    
+                            </div>
+                        
+                        	<div class="form-group">
+                            	 <div class="form-group row">
+								    <label  class="col-sm-2 col-form-label">Nama Lengkap</label>
+								    <div class="col-sm-10">
+										    <input placeholder="Nama Lengkap" name="namaLengkap" th:field="*{namaLengkap}" class="form-control" th:required="required"/>
+								    </div>
+								  </div>    
+                            </div>
+                            
+                            <div class="form-group">
+                            	 <div class="form-group row">
+								    <label  class="col-sm-2 col-form-label">Jenjang</label>
+								    <div class="col-sm-10">
+										<select class="custom-select" th:field="*{jenjang}" th:required="required">
+											<option value="0" th:readonly="readonly">Jenjang</option>
+											<option value="S1">S1</option>
+											<option value="S2">S2</option>
+											<option value="S3">S3</option>
+										</select>
+								    </div>
+								  </div>    
+                            </div>
+                                                        
+                            <div class="form-group">
+                            	 <div class="form-group row">
+								    <label  class="col-sm-2 col-form-label">Tahun Masuk</label>
+								    <div class="col-sm-10">
+								        <input placeholder="Tahun Masuk" name="tahunMasuk" th:field="*{tahunMasuk}" class="form-control" th:required="required"/>
+								    </div>
+								  </div>    
+                            </div>
+                            
+                            <div class="form-group">
+                            	 <div class="form-group row">
+								    <label  class="col-sm-2 col-form-label">Kurikulum</label>
+									 <div class="col-sm-10">
+										 <select class="custom-select" th:field="*{kodeKurikulum}" th:required="required">
+											 <div th:each="kurikulum:${allKurikulum}">
+												 <option th:value="${kurikulum.kode_kurikulum}" th:text="${kurikulum.kode_kurikulum}"></option>
+											 </div>
+										 </select>
+									 </div>
+								  </div>    
+                            </div>
+                            </div>
+                            <!--<div class="col-12">-->
+                            <!---->
+							<!---->
+							<!--<div class="form-group row">-->
+							    <!--<label class="col-sm-2 col-form-label">Universitas</label>-->
+							    <!--<div class="col-sm-10">-->
+		                            <!--<select class="custom-select" th:field="*{idUniv}">-->
+									  <!--<option value="0">Pilih Universitas</option>-->
+									  <!--<option value="1">Universitas A</option>-->
+									  <!--<option value="2">Universitas B</option>-->
+									  <!--<option value="3">Universitas C</option>-->
+									<!--</select>-->
+								<!--</div>-->
+							<!--</div>-->
+                            <!---->
+                            <!--<div class="form-group row">-->
+							    <!--<label class="col-sm-2 col-form-label">Fakultas</label>-->
+							    <!--<div class="col-sm-10">-->
+		                            <!--<select class="custom-select" th:field="*{idFakultas}">-->
+									  <!--<option value="0">Pilih Fakultas</option>-->
+									  <!--<option value="1">Fakultas A1</option>-->
+									  <!--<option value="2">Fakultas A2</option>-->
+									  <!--<option value="3">Fakultas A3 C</option>-->
+									<!--</select>-->
+								<!--</div>-->
+							<!--</div>-->
+							<!---->
+                            <!--<div class="form-group row">-->
+							    <!--<label class="col-sm-2 col-form-label">Prodi</label>-->
+							    <!--<div class="col-sm-10">-->
+		                            <!--<select class="custom-select" th:field="*{idProdi}">-->
+									  <!--<option value="0">Pilih Prodi</option>-->
+									  <!--<option value="1">Program Studi A1X</option>-->
+									  <!--<option value="2">Program Studi A2X</option>-->
+									  <!--<option value="3">Program Studi A3X</option>-->
+									<!--</select>-->
+								<!--</div>-->
+							<!--</div>-->
+
+                            <div class="form-group">
+	                            <input type="submit" name="submit" class="btn btn-primary"/>
+	                        </div>
+						</div>
+                        </div>
+                        
+                    </form>
+			</div>
+			<br/>
+		</div>
+	</section>
+	
+<div th:replace="fragments/fragment :: foot-html"></div>
+</body>
+</html>

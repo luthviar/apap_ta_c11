@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head-html"></head>
+<body>
+	<header th:replace="fragments/fragment :: header"></header>
+
+	<div th:if = "${param.error}" >
+
+	<div class="alert alert-danger alert-dismissable" style="margin-bottom:-20px;">
+	 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	 Invalid username and password.
+	</div>
+
+	</div>
+	<div th:if = "${param.logout}" >
+	<div class="alert alert-success alert-dismissable"  style="margin-bottom:-20px;">
+	 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  You have been logged out.
+	</div>
+
+	</div>
+	<!--Jumbotron Section-->
+	<section id="jumbotron">
+		<div class="container">
+			<div th:switch="${page}">
+				<div class="row" th:case="add-irs">
+					<div class="col-4">
+						<form  th:action = "@{/login}" method = "post" >
+							<div class="form-group">
+								<input class="form-control" type="text" name="username" placeholder="Username"/>
+							</div>
+							<div class="form-group">
+								<input class="form-control" type="password" name="password" placeholder="Password"/>
+							</div>
+							<div class="form-group">
+								<input type="submit" name="submit" class="btn btn-primary"/>
+							</div>
+						</form>
+
+					</div>
+					<div class="col-8">	</div>
+				</div>
+				</div>
+		</div>
+
+	</section>
+
+<div th:replace="fragments/fragment :: foot-html"></div>
+</body>
+</html>

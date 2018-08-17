@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head-html"></head>
+<body>
+	<header th:replace="fragments/fragment :: header"></header>
+
+	<!--Jumbotron Section-->
+	<section id="header">
+		<div class="container">
+			<h1>Menu Aplikasi Akademik</h1>
+			<a href="#">Dashboard Mahasiswa</a>
+		</div>
+	</section>
+	<section id="main-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-4">
+					<a href="/mahasiswa/profile/view" style="text-decoration:none;color:#fff">
+					<div class="card" style="background:#58bfbb;padding:50px 0px 50px 0px">
+						<h5 class="text-center">Profile Mahasiswa</h5>
+					</div></a>
+				</div>
+				<div class="col-4">
+					<a href="/mahasiswa/riwayat/lihat" style="text-decoration:none;color:#fff">
+					<div class="card" style="background:#58bfbb;padding:50px 0px 50px 0px">
+						<h5 class="text-center">Riwayat Perkuliahan Mahasiswa</h5>
+					</div>
+					</a>
+				</div>
+
+				<div class="col-4">
+					<a href="/mahasiswa/status-kelulusan" style="text-decoration:none;color:#fff">
+						<div class="card" style="background:#58bfbb;padding:50px 0px 50px 0px">
+							<h5 class="text-center">Lihat Status Kelulusan Mahasiswa</h5>
+						</div>
+					</a>
+				</div>
+			</div>
+			<br/>
+
+			<div class="row">
+
+				<div class="col-4">
+					<a href="/mahasiswa/irs/add" style="text-decoration:none;color:#fff">
+					<div class="card" style="background:#58bfbb;padding:50px 0px 50px 0px">
+						<h5 class="text-center">Tambah IRS Mahasiswa</h5>
+					</div>
+					</a>
+				</div>
+				
+				<div class="col-4">
+					<a href="/mahasiswa/irs/drop" style="text-decoration:none;color:#fff">
+					<div class="card" style="background:#58bfbb;padding:50px 0px 50px 0px">
+						<h5 class="text-center">Drop IRS Mahasiswa</h5>
+					</div>
+					</a>
+				</div>
+			
+				<div class="col-4">
+					<a href="/mahasiswa/irs/lihat" style="text-decoration:none;color:#fff">
+					<div class="card" style="background:#58bfbb;padding:50px 0px 50px 0px">
+						<h5 class="text-center">Lihat IRS Mahasiswa</h5>
+					</div>
+					</a>
+				</div>
+						
+			</div>
+			<br/>
+			
+			
+			</div>
+
+
+
+	</section>
+<div th:replace="fragments/fragment :: foot-html"></div>
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>-->
+<!--<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
+</body>
+</html>

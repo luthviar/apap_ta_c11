@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head-html"></head>
+<body>
+   <header th:replace="fragments/fragment :: header"></header>
+	
+	<!--Jumbotron Section-->
+	<section id="header">
+		<div class="container">
+			<h1>Menu Aplikasi Akademik</h1>
+			<a href="#">Dashboard / Lihat Status Kelulusan Mahasiswa</a>
+		</div>
+	</section>
+    <!--Jumbotron Section-->
+    <section id="main-content">
+		<div class="container col-md-6 offset-md-3">
+			<div class="row">
+				<h1>LIHAT STATUS KELULUSAN <br/> MAHASISWA</h1>
+			</div>
+			<div class="row">
+			
+			<table  class="table">
+                  <tr>
+                   <th>NPM </th>
+                   <td th:text="${mahasiswa.npm}">
+                       NPM
+                   </td>
+                  </tr>
+                  
+                  <tr>
+                   <th>Nama Lengkap</th>
+                   <td th:text="${mahasiswa.namaLengkap}">
+                       Nama Lengkap
+                   </td>
+                  </tr>
+                  
+                  <tr>
+                    <th>Kelulusan</th>
+                    
+                   <td th:if="${cekLulus == true}">
+                       Sudah Lulus
+                   </td>
+                   <td th:if="${cekLulus == false}">
+                       Belum Lulus
+                   </td>
+                  </tr>
+                  
+                  <tr>
+                     <th>Wisuda</th>
+	                   <td th:if="${statusLulus.isWisuda == true}">
+	                       Sudah Wisuda
+	                   </td>
+	                   <td th:if="${statusLulus.isWisuda == false}">
+	                       Belum Wisuda
+	                   </td>
+                  </tr>
+                  
+                  <tr>
+	                   <th>Aktif</th>
+	                   <td th:if="${statusLulus.isAktif == true}">
+	                       Masih Aktif
+	                   </td>
+	                   <td th:if="${statusLulus.isAktif == false}">
+	                       Tidak Aktif
+	                   </td>
+                  </tr>
+                  
+                  <tr th:if="${cekSisa &gt; 0}">
+                   <th>SKS Tersisa untuk Lulus</th>
+                   <td th:text="${cekSisa}">
+                       cekSisa
+                   </td>
+                  </tr>
+              
+           </table>
+			</div>
+			<br/>
+
+			
+
+		</div>
+
+	</section>
+	
+<div th:replace="fragments/fragment :: foot-html"></div>
+</body>
+</html>
